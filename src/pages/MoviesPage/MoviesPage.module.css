@@ -1,0 +1,25 @@
+.text {
+    width: 250px;
+    padding-left: 15px;
+    border: 2px solid rgb(89, 89, 164);
+    border-radius: 10px;
+    color: rgb(21, 28, 94);
+}
+
+.btn {
+    width: 100px;
+    transition: 0.5s;
+    border-radius: 10px;
+    border: 2px solid rgb(89, 89, 164);
+    color: rgb(21, 28, 94);
+    background-color: inherit;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
