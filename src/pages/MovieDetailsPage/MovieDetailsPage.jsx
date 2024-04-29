@@ -18,6 +18,7 @@ export default function MovieDetailsPage() {
 useEffect(() => {
     if (!movieId) 
         return;
+
     async function fetchMovieDetail() {
         try {
             setLoading(true);
