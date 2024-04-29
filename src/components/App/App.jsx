@@ -7,7 +7,7 @@ import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage"
 import MovieCast from '../MovieCast/MovieCast'
 import MovieReviews from '../MovieReviews/MovieReviews'
 
-const App = () => {
+export default function App() {
   return (
     <>
       <Navigation/>
@@ -22,5 +22,4 @@ const App = () => {
       </Routes>
     </>
   );
-};
-export default App;
+}

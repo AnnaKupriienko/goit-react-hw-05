@@ -3,11 +3,6 @@ const API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MGQwZWI4NmU2Y2VjNjJjNTY5YjhlYj
 axios.defaults.headers.common['Authorization'] = `Bearer ${API_KEY}`;
 axios.defaults.baseURL = "https://api.themoviedb.org"
 
-// const options = {
-//     headers: {
-//         Authorization: `Bearer ${API_KEY}`
-//     }
-// }
 export const getTrendingMovies = async ()=>{
     const response = await axios.get("3/trending/movie/day", {
         params: {
@@ -16,21 +11,20 @@ export const getTrendingMovies = async ()=>{
     } )
     return response.data.results;
 }
-export const getMovies = async (searcQUERY) => {
+export const getMovies = async (searcQuery) => {
     const response = await axios.get("3/search/movie",{
         params: {
-            query: searcQUERY,
+            query: searcQuery,
             language: "en-US",
         }
     });
     return response.data.results;
 }
-export const getMoviesDetails = async (movieId) => {
+export const getMoviesId = async (movieId) => {
     const response = await axios.get(`3/movie/${movieId}`, {
         params: {
             language: "en-US",
-        }
+        },
     });
-    console.log(response.data);
     return response.data;
 }

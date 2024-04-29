@@ -1,6 +1,7 @@
 import css from "./Info.module.css"
 
 export default function Info({ movies }) {
+    
     const defaultImg =
         '<https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg>'
     return (
@@ -14,10 +15,10 @@ export default function Info({ movies }) {
                 <h2>Overview</h2>
                 <p>{movies.overview}</p>
                 <h2>Genres</h2>
-                <ul className={css.list}>
-          {movies.genres.map((item) => {
-            return <li key={item.id}>{item.name}</li>;
-          })}
+                <ul>
+                    {movies.genres.map(item => {
+                        return <li key={item.id}> {item.name}</li>
+                    })}
                 </ul> 
             </div>
 </div>
