@@ -34,11 +34,11 @@ useEffect(() => {
 }, [movieId]);
     return (
         <div>
-            <Link to ={backLinkHref}>Go Back</Link>
+            <Link to={backLinkHref}>Go Back</Link>
             {loading && <Loader />}
             {error && <Error />}
-            {movies  && <Info movies={movies}/> }
+            {movies && <Info movies={movies} />}
         </div>
-    )
+    );
 }
 
