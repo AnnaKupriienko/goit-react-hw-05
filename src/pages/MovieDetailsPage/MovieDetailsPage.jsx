@@ -1,11 +1,12 @@
 import { useEffect, useState} from "react";
-import { NavLink, useParams } from "react-router-dom"
+import { NavLink, useParams, Outlet } from "react-router-dom"
 import { getMoviesId } from "../../api";
 import { useLocation } from "react-router-dom";
 import Loader from '../../components/Loader/Loader'
 import Error from "../../components/Error/Error"
 import Info from "../../components/Info/Info"
 import css from './MovieDetailsPage.module.css'
+
 
 export default function MovieDetailsPage() {
     const { movieId } = useParams();
@@ -39,6 +40,15 @@ useEffect(() => {
             {loading && <Loader />}
             {error && <Error />}
             {movies && <Info movies={movies} />}
+            <ul>
+                <li>
+                    <NavLink to="cast">Cast</NavLink>
+                </li>
+                 <li>
+                    <NavLink to="reviews">Reviews</NavLink>
+                </li>
+            </ul>
+            <Outlet/>
         </div>
     );
 }
