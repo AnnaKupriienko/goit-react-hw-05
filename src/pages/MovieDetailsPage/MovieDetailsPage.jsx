@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState, useRef} from "react";
 import { NavLink, useParams, Outlet } from "react-router-dom"
 import { getMoviesId } from "../../api";
 import { useLocation } from "react-router-dom";
@@ -14,7 +14,7 @@ export default function MovieDetailsPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const location = useLocation();
-    const backLinkHref = location.state ?? '/movies';
+    const backLinkHref = useRef(location.state) ?? '/movies';
     
 useEffect(() => {
     if (!movieId) {
@@ -36,7 +36,7 @@ useEffect(() => {
 }, [movieId]);
     return (
         <div>
-            <NavLink className={css.link}  to={backLinkHref}>Go Back</NavLink>
+            <NavLink className={css.link}  to={backLinkHref.current}>Go Back</NavLink>
             {loading && <Loader />}
             {error && <Error />}
             {movies && <Info movies={movies} />}
